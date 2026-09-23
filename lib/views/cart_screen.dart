@@ -76,7 +76,7 @@ class _CartScreenState extends State<CartScreen> {
     try {
       await FirebaseFirestore.instance.collection('cart').doc(cartItemId).delete();
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Item removed from cart successfully')),
+        const SnackBar(content: Text('Item removed from cart successfully', style: TextStyle(color: Colors.white)), backgroundColor: Colors.red),
       );
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
